@@ -1,11 +1,8 @@
 package pages;
 
-
-import org.junit.*;
-import org.openqa.selenium.*;
+import org.openqa.selenium.WebDriver;
 
 public class BasePage {
-
     protected WebDriver driver;
     protected String url;
 
@@ -14,17 +11,11 @@ public class BasePage {
         this.url = url;
     }
 
-     public String getUrl() {
-            return url;
-     }
-
-     public void navigateToPage() {
-        this.driver.get(url);
+    public String getUrl() {
+        return url;
     }
 
-    public void assertNavigatedUrl() {
-        String currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals("Current URL is not as expected.", url, currentUrl);
-
+    public void navigateToPage() {
+        this.driver.get(url);
     }
 }
